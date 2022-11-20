@@ -19,7 +19,7 @@ function CheckWin() {
   arr.forEach(checking);
 
   function checking(item) {
-    if ((box[item[0]].innerHTML === box[item[1]].innerHTML) && (box[item[1]].innerHTML === box[item[2]].innerHTML)) {
+    if ( (box[item[0]].innerHTML != "") && (box[item[0]].innerHTML == box[item[1]].innerHTML) && (box[item[1]].innerHTML == box[item[2]].innerHTML)) {
       document.querySelector("#print").innerHTML = "you won";
     }
   }
