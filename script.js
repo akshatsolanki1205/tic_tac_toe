@@ -20,21 +20,29 @@ function CheckWin() {
 
   function checking(item) {
     if ( (box[item[0]].innerHTML != "") && (box[item[0]].innerHTML == box[item[1]].innerHTML) && (box[item[1]].innerHTML == box[item[2]].innerHTML)) {
-      document.querySelector("#print").innerHTML = "you won";
+      document.querySelector("#print").innerHTML = box[item[0]].innerHTML + " won";
     }
   }
 }
 
-//decides to print x/o
+//decides to print x/o  + double tap not allowed
 function common(n) {
-  if (turn % 2 != 0) {
-    document.querySelectorAll(".box")[n].innerHTML = "X";
-  } else {
-    document.querySelectorAll(".box")[n].innerHTML = "O";
-  }
-  turn++;
+
+  let square =  document.querySelectorAll(".box")[n];
+
+  if(square.innerText=="") {
+
+    if (turn % 2 != 0) {
+      square.innerText = "X";       //square = "x" not working;
+    } else {
+      square.innerText = "O";
+    }
+    turn++;
 
   CheckWin();
+
+  }
+  
 }
 
 function tap1() {
@@ -71,4 +79,14 @@ function tap8() {
 
 function tap9() {
   common(8);
+}
+
+
+//reset game
+
+function reset() {
+  for(let i = 0; i<9; i++) {
+    document.querySelectorAll('.box')[i].innerText = "";
+  }
+  document.querySelector('#print').innerText = "";
 }
