@@ -47,10 +47,18 @@ nav {
   background-color: rgb(71, 58, 248);
 }
 
-#print{
+.print{
   color: black;
   font-size: large;
 }
 
+.won{
+  direction: flex;
+  flex-direction: row;
+  margin-right: 2vw;
+}
 
-
+.i img{
+  width: 0vw;
+  transition: width 1s ease-in-out;
+}

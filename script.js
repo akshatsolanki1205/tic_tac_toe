@@ -20,7 +20,8 @@ function CheckWin() {
 
   function checking(item) {
     if ( (box[item[0]].innerHTML != "") && (box[item[0]].innerHTML == box[item[1]].innerHTML) && (box[item[1]].innerHTML == box[item[2]].innerHTML)) {
-      document.querySelector("#print").innerHTML = box[item[0]].innerHTML + " won";
+      document.querySelector(".print").innerHTML = box[item[0]].innerHTML + " won";
+      document.querySelector('.i').getElementsByTagName('img')[0].style.width = "15vw";
     }
   }
 }
@@ -88,5 +89,7 @@ function reset() {
   for(let i = 0; i<9; i++) {
     document.querySelectorAll('.box')[i].innerText = "";
   }
-  document.querySelector('#print').innerText = "";
+  document.querySelector('.print').innerText = "";
+  document.querySelector('.i').getElementsByTagName('img')[0].style.width = "0vw";
+
 }
